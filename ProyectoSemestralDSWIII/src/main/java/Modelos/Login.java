@@ -4,8 +4,7 @@
  */
 package Modelos;
 
-import Frames.FrameLogin;
-import Frames.FrameMenu;
+import Frames.*;
 import static java.lang.String.valueOf;
 import java.sql.*;
 import java.util.logging.Level;
@@ -33,8 +32,10 @@ public class Login {
 
             if(resultados.next()){
                 JOptionPane.showMessageDialog(null, "El usuario es Correcto");
-                FrameMenu objetoMenu = new FrameMenu();
-                objetoMenu.setVisible(true);
+                FrameLogin objetoLogin = new FrameLogin();
+                objetoLogin.setVisible(false);
+                FrameInsertar objetoInsertar = new FrameInsertar();
+                objetoInsertar.setVisible(true);
             }else {
                 JOptionPane.showMessageDialog(null, "El usuario es incorrecto, vuelva a intentar."); 
             }
