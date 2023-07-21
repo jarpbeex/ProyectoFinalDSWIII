@@ -1,0 +1,54 @@
+[1mdiff --git a/ProyectoSemestralDSWIII/src/main/java/RecursosAparte/GuiaDeConexion.java b/ProyectoSemestralDSWIII/src/main/java/RecursosAparte/GuiaDeConexion.java[m
+[1mindex 1c11e6a..b8cb0e0 100644[m
+[1m--- a/ProyectoSemestralDSWIII/src/main/java/RecursosAparte/GuiaDeConexion.java[m
+[1m+++ b/ProyectoSemestralDSWIII/src/main/java/RecursosAparte/GuiaDeConexion.java[m
+[36m@@ -1,19 +1,19 @@[m
+[31m-package Conexion;[m
+[32m+[m[32mpackage RecursosAparte;[m
+ [m
+ import com.zaxxer.hikari.HikariConfig;[m
+ import com.zaxxer.hikari.HikariDataSource;[m
+[31m-import java.sql.Connection;[m
+[31m-import java.sql.ResultSet;[m
+[31m-import java.sql.SQLException;[m
+[31m-import java.sql.Statement;[m
+[32m+[m[32mimport java.sql.*;[m
+[32m+[m[32mimport java.util.logging.Level;[m
+[32m+[m[32mimport java.util.logging.Logger;[m
+ [m
+[31m-public class ConexionHK {[m
+[32m+[m[32mpublic class GuiaDeConexion {[m
+     public static void main(String[] args) {[m
+[32m+[m[41m        [m
+[32m+[m[41m        [m
+         HikariConfig config = new HikariConfig();[m
+         config.setJdbcUrl("jdbc:mariadb://localhost:3307/gestion_clientes");[m
+         config.setUsername("estudiante");[m
+         config.setPassword("jorjorxdlol12");[m
+[31m-[m
+         HikariDataSource dataSource = new HikariDataSource(config);[m
+         [m
+         try (Connection connection = dataSource.getConnection()) {[m
+[36m@@ -23,7 +23,7 @@[m [mpublic class ConexionHK {[m
+ [m
+             while (resultSet.next()) {[m
+                 // Obtener los valores de las columnas por nombre o índice[m
+[31m-                String codigo_barra  = resultSet.getString("codigo_barra");[m
+[32m+[m[32m                String codigo_barra = resultSet.getString("codigo_barra");[m
+                 String nombre = resultSet.getString("nombre");[m
+                 Double precio_estandar = resultSet.getDouble("precio_estandar");[m
+                 Double precio_descuento = resultSet.getDouble("precio_descuento");[m
+[36m@@ -31,9 +31,10 @@[m [mpublic class ConexionHK {[m
+                 // Realizar cualquier operación necesaria con los datos obtenidos[m
+                 System.out.println("codigo_barra: " + codigo_barra + ", nombre: " + nombre + ", precio_estandar: " + precio_estandar + ", precio_descuento: " + precio_descuento);[m
+             }[m
+[31m-        } catch (SQLException e) {[m
+[31m-            e.printStackTrace();[m
+[32m+[m[32m        } catch (SQLException ex) {[m
+[32m+[m[32m            Logger.getLogger(GuiaDeConexion.class.getName()).log(Level.SEVERE,null, ex);[m
+         }[m
+[31m-                [m
+[32m+[m[41m        [m
+[32m+[m[41m        [m
+     }[m
+ }[m
