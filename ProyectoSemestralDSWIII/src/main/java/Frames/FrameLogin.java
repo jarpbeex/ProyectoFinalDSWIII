@@ -4,7 +4,7 @@
  */
 package Frames;
 
-import Modelos.ConexionHikari;
+import Modelos.Hikari;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -151,6 +151,7 @@ public class FrameLogin extends javax.swing.JFrame {
     private void ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ingresarActionPerformed
         Modelos.Login objetoLogin = new Modelos.Login();
         objetoLogin.validaUsuario(usuario_campo, contraseña_campo);
+        dispose();
     }//GEN-LAST:event_ingresarActionPerformed
 
     /**

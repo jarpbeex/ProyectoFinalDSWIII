@@ -20,7 +20,7 @@ public class Login {
 
     public void validaUsuario(JTextField usuario, JPasswordField contraseña) {
         String consulta = "SELECT * FROM login WHERE login.usuario = (?) AND login.contraseña = (?)";
-        try (Connection conexion = ConexionHikari.getConnection();
+        try (Connection conexion = Hikari.getConnection();
                 PreparedStatement statement = conexion.prepareStatement(consulta);){
             ResultSet resultados;
             String contra = valueOf(contraseña.getPassword());
@@ -32,8 +32,6 @@ public class Login {
 
             if(resultados.next()){
                 JOptionPane.showMessageDialog(null, "El usuario es Correcto");
-                FrameLogin objetoLogin = new FrameLogin();
-                objetoLogin.setVisible(false);
                 FrameInsertar objetoInsertar = new FrameInsertar();
                 objetoInsertar.setVisible(true);
             }else {

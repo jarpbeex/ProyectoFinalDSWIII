@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class ControlDatos {
     public Boolean insertar(Cliente newCliente) {
         String consulta = "INSERT INTO clientes(cedula, nombre, fecha_nacimiento, genero, correo, telefono, provincia, ciudad, corregimiento, tipo_cliente) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        try (Connection conexion = ConexionHikari.getConnection();
+        try (Connection conexion = Hikari.getConnection();
                 PreparedStatement statement = conexion.prepareStatement(consulta);) {
 
             statement.setString(1, newCliente.getNombre());

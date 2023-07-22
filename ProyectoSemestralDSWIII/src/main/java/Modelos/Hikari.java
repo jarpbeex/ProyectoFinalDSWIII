@@ -13,7 +13,7 @@ import java.sql.SQLException;
  *
  * @author josue
  */
-public class ConexionHikari {
+public class Hikari {
     private static final HikariConfig configuracion = new HikariConfig();
     private static final HikariDataSource dataS;
 
@@ -26,7 +26,6 @@ public class ConexionHikari {
         configuracion.addDataSourceProperty("prepStmsCacheSqlLimit", 2048);
 
         dataS = new HikariDataSource(configuracion);
-
     }
 
     public static Connection getConnection() throws SQLException {
@@ -34,6 +33,6 @@ public class ConexionHikari {
     }
 
     // Esta vacio para que no se cree una instancia.
-    private ConexionHikari() {
+    private Hikari() {
     }
 }

@@ -14,7 +14,33 @@ public class Cliente {
     private String ciudad;
     private String corregimiento;
     private String tipo_cliente;
-
+    
+    public Cliente(String cedula, String nombre, String fecha_nacimiento, String genero, String correo, String telefono, String provincia, String ciudad, String corregimiento, String tipo_cliente) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.fecha_nacimiento = fecha_nacimiento;
+        this.genero = genero;
+        this.correo = correo;
+        this.telefono = telefono;
+        this.provincia = provincia;
+        this.ciudad = ciudad;
+        this.corregimiento = corregimiento;
+        this.tipo_cliente = tipo_cliente;
+    }
+    
+    public Cliente(){
+        cedula = "";
+        nombre = "";
+        fecha_nacimiento = "";
+        genero = "";
+        correo = "";
+        telefono = "";
+        provincia = "";
+        ciudad = "";
+        corregimiento = "";
+        tipo_cliente = "";
+    }
+    
     public String getCedula() {
         return cedula;
     }
@@ -93,32 +119,6 @@ public class Cliente {
 
     public void setTipo_cliente(String tipo_cliente) {
         this.tipo_cliente = tipo_cliente;
-    }
-
-    public Cliente(String cedula, String nombre, String fecha_nacimiento, String genero, String correo, String telefono, String provincia, String ciudad, String corregimiento, String tipo_cliente) {
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.fecha_nacimiento = fecha_nacimiento;
-        this.genero = genero;
-        this.correo = correo;
-        this.telefono = telefono;
-        this.provincia = provincia;
-        this.ciudad = ciudad;
-        this.corregimiento = corregimiento;
-        this.tipo_cliente = tipo_cliente;
-    }
-    
-    public Cliente(){
-        cedula = "";
-        nombre = "";
-        fecha_nacimiento = "";
-        genero = "";
-        correo = "";
-        telefono = "";
-        provincia = "";
-        ciudad = "";
-        corregimiento = "";
-        tipo_cliente = "";
     }
     
 }
