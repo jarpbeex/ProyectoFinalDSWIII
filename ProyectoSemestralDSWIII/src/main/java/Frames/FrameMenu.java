@@ -4,6 +4,13 @@
  */
 package Frames;
 
+import Frames.Panels.productosExistentes;
+import Frames.Panels.clientesFrecuentes;
+import Frames.Panels.clientesVIP;
+import Frames.Panels.clientesOcacionales;
+import Frames.Panels.clientesTodos;
+import Frames.Panels.comprasRealizadas;
+import Frames.Panels.panelBusqueda;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -18,7 +25,6 @@ public class FrameMenu extends javax.swing.JFrame {
      */
     public FrameMenu() {
         initComponents();
-        
     }
 
     /**
@@ -43,6 +49,7 @@ public class FrameMenu extends javax.swing.JFrame {
         botonClientesOcacionales = new javax.swing.JButton();
         botonClientesFrecuentes = new javax.swing.JButton();
         botonClientesVIP = new javax.swing.JButton();
+        botonBusqueda = new javax.swing.JButton();
         contenidoClientes = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         tabCompras = new javax.swing.JPanel();
@@ -140,6 +147,13 @@ public class FrameMenu extends javax.swing.JFrame {
             }
         });
 
+        botonBusqueda.setText("Busqueda");
+        botonBusqueda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBusquedaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -150,21 +164,24 @@ public class FrameMenu extends javax.swing.JFrame {
                     .addComponent(botonClientesOcacionales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonClientesTodos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonClientesFrecuentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonClientesVIP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(botonClientesVIP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(57, 57, 57)
                 .addComponent(botonClientesTodos)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(botonClientesOcacionales)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(botonClientesFrecuentes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botonClientesVIP)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(botonBusqueda)
+                .addContainerGap(191, Short.MAX_VALUE))
         );
 
         contenidoClientes.setBackground(new java.awt.Color(204, 255, 204));
@@ -177,17 +194,17 @@ public class FrameMenu extends javax.swing.JFrame {
         contenidoClientes.setLayout(contenidoClientesLayout);
         contenidoClientesLayout.setHorizontalGroup(
             contenidoClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoClientesLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoClientesLayout.createSequentialGroup()
+                .addContainerGap(112, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGap(103, 103, 103))
         );
         contenidoClientesLayout.setVerticalGroup(
             contenidoClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenidoClientesLayout.createSequentialGroup()
-                .addGap(125, 125, 125)
+                .addGap(126, 126, 126)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout tabClientesLayout = new javax.swing.GroupLayout(tabClientes);
@@ -334,7 +351,7 @@ public class FrameMenu extends javax.swing.JFrame {
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Pestanas, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
+                .addComponent(Pestanas)
                 .addContainerGap())
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -401,6 +418,12 @@ public class FrameMenu extends javax.swing.JFrame {
         productosExistentes pe = new productosExistentes();
         mostrarPanel(pe, contenidoProductos);
     }//GEN-LAST:event_botonProductosExistenteActionPerformed
+
+    private void botonBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBusquedaActionPerformed
+        // TODO add your handling code here:
+        panelBusqueda pb = new panelBusqueda();
+        mostrarPanel(pb, contenidoClientes);
+    }//GEN-LAST:event_botonBusquedaActionPerformed
     
     private void mostrarPanel (JPanel p, JPanel contenidoP) {
         p.setSize(525, 419);
@@ -450,6 +473,7 @@ public class FrameMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JTabbedPane Pestanas;
+    private javax.swing.JButton botonBusqueda;
     private javax.swing.JButton botonClientesFrecuentes;
     private javax.swing.JButton botonClientesOcacionales;
     private javax.swing.JButton botonClientesTodos;
