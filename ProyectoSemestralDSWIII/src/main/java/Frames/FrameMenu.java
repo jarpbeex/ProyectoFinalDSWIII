@@ -51,7 +51,8 @@ public class FrameMenu extends javax.swing.JFrame {
         contenidoCompras = new javax.swing.JPanel();
         tabProductos = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
+        botonProductosExistente = new javax.swing.JButton();
+        contenidoProductos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
@@ -268,27 +269,40 @@ public class FrameMenu extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(204, 255, 255));
 
+        botonProductosExistente.setText("Productos existentes");
+        botonProductosExistente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonProductosExistenteActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 202, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(botonProductosExistente)
+                .addContainerGap(71, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 429, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(90, 90, 90)
+                .addComponent(botonProductosExistente)
+                .addContainerGap(316, Short.MAX_VALUE))
         );
 
-        jPanel5.setBackground(new java.awt.Color(204, 255, 204));
+        contenidoProductos.setBackground(new java.awt.Color(204, 255, 204));
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 625, Short.MAX_VALUE)
+        javax.swing.GroupLayout contenidoProductosLayout = new javax.swing.GroupLayout(contenidoProductos);
+        contenidoProductos.setLayout(contenidoProductosLayout);
+        contenidoProductosLayout.setHorizontalGroup(
+            contenidoProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 561, Short.MAX_VALUE)
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        contenidoProductosLayout.setVerticalGroup(
+            contenidoProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
@@ -299,12 +313,12 @@ public class FrameMenu extends javax.swing.JFrame {
             .addGroup(tabProductosLayout.createSequentialGroup()
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(contenidoProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         tabProductosLayout.setVerticalGroup(
             tabProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(contenidoProductos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         Pestanas.addTab("PRODUCTOS", tabProductos);
@@ -320,7 +334,7 @@ public class FrameMenu extends javax.swing.JFrame {
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Pestanas)
+                .addComponent(Pestanas, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -381,6 +395,12 @@ public class FrameMenu extends javax.swing.JFrame {
         comprasRealizadas cr = new comprasRealizadas();
         mostrarPanel(cr, contenidoCompras);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void botonProductosExistenteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonProductosExistenteActionPerformed
+        // TODO add your handling code here:
+        productosExistentes pe = new productosExistentes();
+        mostrarPanel(pe, contenidoProductos);
+    }//GEN-LAST:event_botonProductosExistenteActionPerformed
     
     private void mostrarPanel (JPanel p, JPanel contenidoP) {
         p.setSize(525, 419);
@@ -434,8 +454,10 @@ public class FrameMenu extends javax.swing.JFrame {
     private javax.swing.JButton botonClientesOcacionales;
     private javax.swing.JButton botonClientesTodos;
     private javax.swing.JButton botonClientesVIP;
+    private javax.swing.JButton botonProductosExistente;
     private javax.swing.JPanel contenidoClientes;
     private javax.swing.JPanel contenidoCompras;
+    private javax.swing.JPanel contenidoProductos;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -446,7 +468,6 @@ public class FrameMenu extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel tabClientes;
     private javax.swing.JPanel tabCompras;
     private javax.swing.JPanel tabInicio;
