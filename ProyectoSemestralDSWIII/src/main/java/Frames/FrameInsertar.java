@@ -7,6 +7,9 @@ package Frames;
 import Modelos.ControlDatos;
 import javax.swing.JOptionPane;
 import Entidades.Cliente;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -189,12 +192,12 @@ public class FrameInsertar extends javax.swing.JFrame {
                                         .addComponent(jLabel4)
                                         .addComponent(nacimientoCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel11))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel5)
-                                .addGap(12, 12, 12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jLabel6))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(84, 84, 84)
+                                .addGap(92, 92, 92)
                                 .addComponent(generoCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(correoCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -217,7 +220,7 @@ public class FrameInsertar extends javax.swing.JFrame {
                             .addComponent(jLabel9))))
                 .addGap(18, 18, 18)
                 .addComponent(guardarButton)
-                .addContainerGap(52, Short.MAX_VALUE))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
 
         pack();
@@ -272,7 +275,23 @@ public class FrameInsertar extends javax.swing.JFrame {
         if(guardar){
            ControlDatos control = new ControlDatos();
            Cliente newCliente = new Cliente();
-           control.insertar(newCliente);
+           newCliente.setCedula(cedula);
+           newCliente.setNombre(nombre);
+           newCliente.setFecha_nacimiento(fecha_nacimiento);
+           newCliente.setGenero(genero);
+           newCliente.setCorreo(correo);
+           newCliente.setTelefono(telefono);
+           newCliente.setProvincia(provincia);
+           newCliente.setCiudad(ciudad);
+           newCliente.setCorregimiento(corregimiento);
+           newCliente.setEstado(estado);
+           
+            try {
+                control.insertar(newCliente);
+            } catch (SQLException ex) {
+                Logger.getLogger(FrameInsertar.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
            cedulaCampo.setText("");
            nombreCampo.setText("");
            nacimientoCampo.setText("");
