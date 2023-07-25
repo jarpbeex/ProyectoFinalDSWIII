@@ -15,6 +15,7 @@ public class Main {
      */
     public static void main(String[] args) {
         Frames.FrameLogin objetoPrincipal = new Frames.FrameLogin();
+        objetoPrincipal.setSize(830, 450);
         objetoPrincipal.setVisible(true);
     }
     

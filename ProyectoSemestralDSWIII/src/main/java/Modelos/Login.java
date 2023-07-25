@@ -32,6 +32,7 @@ public class Login {
                 JOptionPane.showMessageDialog(null, "El usuario es Correcto");
                 
                 FrameMenu objetoMenu = new FrameMenu();
+                objetoMenu.setSize(830, 450);
                 objetoMenu.setVisible(true);
                 
             }else {
