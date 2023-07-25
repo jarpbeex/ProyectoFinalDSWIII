@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package Frames.Panels;
+package Frames;
 
 import Entidades.Cliente;
 import Entidades.Producto;
@@ -72,19 +72,11 @@ public class clientesFrecuentes extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-<<<<<<< Updated upstream:ProyectoSemestralDSWIII/src/main/java/Frames/clientesFrecuentes.java
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(72, 72, 72)
                 .addComponent(jButton2)
                 .addGap(91, 91, 91))
-=======
-                .addGap(64, 64, 64)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton2)
-                .addGap(83, 83, 83))
->>>>>>> Stashed changes:ProyectoSemestralDSWIII/src/main/java/Frames/Panels/clientesFrecuentes.java
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -99,7 +91,6 @@ public class clientesFrecuentes extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-<<<<<<< Updated upstream:ProyectoSemestralDSWIII/src/main/java/Frames/clientesFrecuentes.java
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
@@ -119,10 +110,6 @@ public class clientesFrecuentes extends javax.swing.JPanel {
            Object[] rowData = {cliente.getNombre(), cliente.getDescuento()};
             model.addRow(rowData);
         }
-=======
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
->>>>>>> Stashed changes:ProyectoSemestralDSWIII/src/main/java/Frames/Panels/clientesFrecuentes.java
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
