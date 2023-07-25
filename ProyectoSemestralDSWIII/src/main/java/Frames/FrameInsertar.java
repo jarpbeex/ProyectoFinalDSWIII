@@ -224,67 +224,67 @@ public class FrameInsertar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void guardarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_guardarButtonActionPerformed
-        Boolean guardar = true;
-        String mensaje = "";
-        String cedula = cedulaCampo.getText();
-        String nombre = nombreCampo.getText();
-        String fecha_nacimiento = nacimientoCampo.getText();
-        String genero = generoCampo.getSelectedItem().toString();
-        String correo = correoCampo.getText();
-        String telefono = telefonoCampo.getText();
-        String provincia = provinciaCampo.getText();
-        String ciudad = ciudadCampo.getText();
-        String corregimiento = corregimientoCampo.getText();
-        String estado = estadoCampo.getSelectedItem().toString();
-        
-        if(cedula.length()==0){
-           guardar = false;
-           mensaje+="Escriba la cedula, por favor\n";
-        }
-        if(nombre.length()==0){
-           guardar = false;
-           mensaje+="Escriba el nombre, por favor\n";
-        }
-        if(fecha_nacimiento.length()==0){
-           guardar = false;
-           mensaje+="Escriba la fecha de naciemiento (AÑO-MES-DIA), por favor\n";
-        }
-        if(correo.length()==0){
-           guardar = false;
-           mensaje+="Escriba el correo, por favor\n";
-        }
-        if(telefono.length()==0){
-           guardar = false;
-           mensaje+="Escriba el telefono (####-####), por favor\n";
-        }
-        if(provincia.length()==0){
-           guardar = false;
-           mensaje+="Escriba la provincia, por favor\n";
-        }
-        if(ciudad.length()==0){
-           guardar = false;
-           mensaje+="Escriba la ciudad, por favor\n";
-        }
-        if(corregimiento.length()==0){
-           guardar = false;
-           mensaje+="Escriba el corregimiento, por favor\n";
-        }
-        if(guardar){
-           ControlDatos control = new ControlDatos();
-           Cliente newCliente = new Cliente();
-           control.insertar(newCliente);
-           cedulaCampo.setText("");
-           nombreCampo.setText("");
-           nacimientoCampo.setText("");
-           generoCampo.setSelectedIndex(0);
-           correoCampo.setText("");
-           telefonoCampo.setText("");
-           provinciaCampo.setText("");
-           ciudadCampo.setText("");
-           corregimientoCampo.setText("");
-           estadoCampo.setSelectedIndex(0);
-        }
-        else JOptionPane.showMessageDialog(null, mensaje);
+//        Boolean guardar = true;
+//        String mensaje = "";
+//        String cedula = cedulaCampo.getText();
+//        String nombre = nombreCampo.getText();
+//        String fecha_nacimiento = nacimientoCampo.getText();
+//        String genero = generoCampo.getSelectedItem().toString();
+//        String correo = correoCampo.getText();
+//        String telefono = telefonoCampo.getText();
+//        String provincia = provinciaCampo.getText();
+//        String ciudad = ciudadCampo.getText();
+//        String corregimiento = corregimientoCampo.getText();
+//        String estado = estadoCampo.getSelectedItem().toString();
+//        
+//        if(cedula.length()==0){
+//           guardar = false;
+//           mensaje+="Escriba la cedula, por favor\n";
+//        }
+//        if(nombre.length()==0){
+//           guardar = false;
+//           mensaje+="Escriba el nombre, por favor\n";
+//        }
+//        if(fecha_nacimiento.length()==0){
+//           guardar = false;
+//           mensaje+="Escriba la fecha de naciemiento (AÑO-MES-DIA), por favor\n";
+//        }
+//        if(correo.length()==0){
+//           guardar = false;
+//           mensaje+="Escriba el correo, por favor\n";
+//        }
+//        if(telefono.length()==0){
+//           guardar = false;
+//           mensaje+="Escriba el telefono (####-####), por favor\n";
+//        }
+//        if(provincia.length()==0){
+//           guardar = false;
+//           mensaje+="Escriba la provincia, por favor\n";
+//        }
+//        if(ciudad.length()==0){
+//           guardar = false;
+//           mensaje+="Escriba la ciudad, por favor\n";
+//        }
+//        if(corregimiento.length()==0){
+//           guardar = false;
+//           mensaje+="Escriba el corregimiento, por favor\n";
+//        }
+//        if(guardar){
+//           ControlDatos control = new ControlDatos();
+//           Cliente newCliente = new Cliente();
+//           control.insertar(newCliente);
+//           cedulaCampo.setText("");
+//           nombreCampo.setText("");
+//           nacimientoCampo.setText("");
+//           generoCampo.setSelectedIndex(0);
+//           correoCampo.setText("");
+//           telefonoCampo.setText("");
+//           provinciaCampo.setText("");
+//           ciudadCampo.setText("");
+//           corregimientoCampo.setText("");
+//           estadoCampo.setSelectedIndex(0);
+//        }
+//        else JOptionPane.showMessageDialog(null, mensaje);
     }//GEN-LAST:event_guardarButtonActionPerformed
 
     private void correoCampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_correoCampoActionPerformed

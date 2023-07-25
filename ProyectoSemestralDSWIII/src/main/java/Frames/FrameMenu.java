@@ -4,6 +4,13 @@
  */
 package Frames;
 
+import Frames.Panels.productosExistentes;
+import Frames.Panels.clientesVIP;
+import Frames.Panels.comprasRealizadas;
+import Frames.Panels.clientesTodos;
+import Frames.Panels.clientesBusqueda;
+import Frames.Panels.clientesFrecuentes;
+import Frames.Panels.clientesOcacionales;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
@@ -43,6 +50,8 @@ public class FrameMenu extends javax.swing.JFrame {
         botonClientesOcacionales = new javax.swing.JButton();
         botonClientesFrecuentes = new javax.swing.JButton();
         botonClientesVIP = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
         contenidoClientes = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         tabCompras = new javax.swing.JPanel();
@@ -74,7 +83,6 @@ public class FrameMenu extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 204, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(0, 0));
-        setPreferredSize(new java.awt.Dimension(830, 450));
         setResizable(false);
         setSize(new java.awt.Dimension(400, 300));
 
@@ -96,7 +104,7 @@ public class FrameMenu extends javax.swing.JFrame {
             .addGroup(tabInicioLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addComponent(jLabel4)
-                .addContainerGap(146, Short.MAX_VALUE))
+                .addContainerGap(59, Short.MAX_VALUE))
         );
         tabInicioLayout.setVerticalGroup(
             tabInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,6 +148,15 @@ public class FrameMenu extends javax.swing.JFrame {
             }
         });
 
+        jButton2.setText("Busqueda");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Editar Clientes");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -150,15 +167,24 @@ public class FrameMenu extends javax.swing.JFrame {
                     .addComponent(botonClientesOcacionales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonClientesTodos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonClientesFrecuentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonClientesVIP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(botonClientesVIP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(31, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton3)
+                .addGap(45, 45, 45))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(64, 64, 64)
+                .addGap(40, 40, 40)
                 .addComponent(botonClientesTodos)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton3)
+                .addGap(25, 25, 25)
                 .addComponent(botonClientesOcacionales)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botonClientesFrecuentes)
@@ -177,17 +203,17 @@ public class FrameMenu extends javax.swing.JFrame {
         contenidoClientes.setLayout(contenidoClientesLayout);
         contenidoClientesLayout.setHorizontalGroup(
             contenidoClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoClientesLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoClientesLayout.createSequentialGroup()
+                .addContainerGap(72, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addGap(56, 56, 56))
         );
         contenidoClientesLayout.setVerticalGroup(
             contenidoClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenidoClientesLayout.createSequentialGroup()
-                .addGap(125, 125, 125)
+                .addGap(118, 118, 118)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(231, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout tabClientesLayout = new javax.swing.GroupLayout(tabClientes);
@@ -197,7 +223,7 @@ public class FrameMenu extends javax.swing.JFrame {
             .addGroup(tabClientesLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contenidoClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 626, Short.MAX_VALUE))
+                .addComponent(contenidoClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE))
         );
         tabClientesLayout.setVerticalGroup(
             tabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -241,7 +267,7 @@ public class FrameMenu extends javax.swing.JFrame {
         contenidoCompras.setLayout(contenidoComprasLayout);
         contenidoComprasLayout.setHorizontalGroup(
             contenidoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 627, Short.MAX_VALUE)
+            .addGap(0, 540, Short.MAX_VALUE)
         );
         contenidoComprasLayout.setVerticalGroup(
             contenidoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -299,7 +325,7 @@ public class FrameMenu extends javax.swing.JFrame {
         contenidoProductos.setLayout(contenidoProductosLayout);
         contenidoProductosLayout.setHorizontalGroup(
             contenidoProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 561, Short.MAX_VALUE)
+            .addGap(0, 474, Short.MAX_VALUE)
         );
         contenidoProductosLayout.setVerticalGroup(
             contenidoProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -334,7 +360,7 @@ public class FrameMenu extends javax.swing.JFrame {
             PanelPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(Pestanas, javax.swing.GroupLayout.DEFAULT_SIZE, 924, Short.MAX_VALUE)
+                .addComponent(Pestanas)
                 .addContainerGap())
             .addGroup(PanelPrincipalLayout.createSequentialGroup()
                 .addGap(16, 16, 16)
@@ -401,6 +427,12 @@ public class FrameMenu extends javax.swing.JFrame {
         productosExistentes pe = new productosExistentes();
         mostrarPanel(pe, contenidoProductos);
     }//GEN-LAST:event_botonProductosExistenteActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        clientesBusqueda cb = new clientesBusqueda();
+        mostrarPanel(cb, contenidoClientes);
+    }//GEN-LAST:event_jButton2ActionPerformed
     
     private void mostrarPanel (JPanel p, JPanel contenidoP) {
         p.setSize(525, 419);
@@ -459,6 +491,8 @@ public class FrameMenu extends javax.swing.JFrame {
     private javax.swing.JPanel contenidoCompras;
     private javax.swing.JPanel contenidoProductos;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -10,13 +10,7 @@ import java.util.logging.Logger;
 public class GuiaDeConexion {
     public static void main(String[] args) {
         
-        /*
-        HikariConfig config = new HikariConfig();
-        config.setJdbcUrl("jdbc:mariadb://localhost:3307/gestion_clientes");
-        config.setUsername("estudiante");
-        config.setPassword("jorjorxdlol12");
-        HikariDataSource dataSource = new HikariDataSource(config);
-        */
+        
         
         try (Connection conexion = Hikari.getConnection();
                 Statement statement = conexion.createStatement();) {
