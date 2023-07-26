@@ -16,10 +16,10 @@ public class Cliente {
     private String corregimiento;
     private String tipo_cliente;
     private String estado;
-    
-    public Cliente(String nombre, String cedula) {
-        this.cedula = cedula;
+
+    public Cliente(String nombre, String cedula, String fecha_nacimiento, String genero, String correo, String telefono, String provincia, String ciudad, String corregimiento, String tipo_cliente, String estado, double montoTotalGastado) {
         this.nombre = nombre;
+        this.cedula = cedula;
         this.fecha_nacimiento = fecha_nacimiento;
         this.genero = genero;
         this.correo = correo;
@@ -29,6 +29,7 @@ public class Cliente {
         this.corregimiento = corregimiento;
         this.tipo_cliente = tipo_cliente;
         this.estado = estado;
+        this.montoTotalGastado = montoTotalGastado;
     }
     
     public Cliente() {

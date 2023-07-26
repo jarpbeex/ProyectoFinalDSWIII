@@ -4,7 +4,9 @@
  */
 package Frames.Panels;
 
-import Modelos.ControlDatos;
+import Entidades.Cliente;
+import Modelos.CrearDatos;
+import Modelos.MostrarDatos;
 
 /**
  *
@@ -32,6 +34,7 @@ public class panelBusqueda extends javax.swing.JPanel {
         tablaBusqueda = new javax.swing.JTable();
         botonBuscar = new javax.swing.JButton();
         campoBuscar = new javax.swing.JTextField();
+        seleccionBusqueda = new javax.swing.JComboBox<>();
 
         tablaBusqueda.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -59,36 +62,46 @@ public class panelBusqueda extends javax.swing.JPanel {
             }
         });
 
+        seleccionBusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Por cedula", "Por nombre", "Por ciudad", "Por tipo de cliente" }));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 508, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
-                .addGap(121, 121, 121)
+                .addGap(49, 49, 49)
                 .addComponent(botonBuscar)
-                .addGap(35, 35, 35)
+                .addGap(58, 58, 58)
+                .addComponent(seleccionBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(campoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(71, 71, 71))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(49, 49, 49)
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonBuscar)
-                    .addComponent(campoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 49, Short.MAX_VALUE))
+                    .addComponent(campoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(seleccionBusqueda, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 64, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
-        // TODO add your handling code here:
-        String datos = campoBuscar.getText();
-        
-        String consulta = "SELECT * FROM clientes WHERE nombre = " + datos;
-        ControlDatos.MostrarDatos(tablaBusqueda, "");
+        String decision = seleccionBusqueda.getSelectedItem().toString();
+        if (decision == "Por cedula"){
+            CrearDatos.buscarXCedula(campoBuscar.getText(), tablaBusqueda);
+        }if (decision == "Por nombre"){
+            CrearDatos.buscarXNombre(campoBuscar.getText(), tablaBusqueda);
+        }if (decision == "Por ciudad"){
+            CrearDatos.buscarXCiudad(campoBuscar.getText(), tablaBusqueda);
+        }else if (decision == "Por tipo de cliente"){
+            CrearDatos.buscarXTipoCliente(campoBuscar.getText(), tablaBusqueda);
+        }
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void campoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoBuscarActionPerformed
@@ -101,6 +114,7 @@ public class panelBusqueda extends javax.swing.JPanel {
     private javax.swing.JButton botonBuscar;
     private javax.swing.JTextField campoBuscar;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JComboBox<String> seleccionBusqueda;
     private javax.swing.JTable tablaBusqueda;
     // End of variables declaration//GEN-END:variables
 }

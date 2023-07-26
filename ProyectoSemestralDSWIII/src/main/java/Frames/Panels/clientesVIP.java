@@ -4,7 +4,7 @@
  */
 package Frames.Panels;
 
-import Modelos.ControlDatos;
+import Modelos.MostrarDatos;
 
 /**
  *
@@ -50,8 +50,18 @@ public class clientesVIP extends javax.swing.JPanel {
         jScrollPane1.setViewportView(jTable1);
 
         jButton1.setText("Productos frecuentes");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Descuento por clientes");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Asesor asignado");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -61,6 +71,11 @@ public class clientesVIP extends javax.swing.JPanel {
         });
 
         jButton4.setText("Cantidad de credito por cliente");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("Buscar todos");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -107,13 +122,24 @@ public class clientesVIP extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        ControlDatos.MostrarDatos(jTable1, "SELECT * FROM clientes WHERE tipo_cliente = 'VIP'");
+        MostrarDatos.MostrarDatos(jTable1, "SELECT * FROM clientes WHERE tipo_cliente = 'VIP'");
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        ControlDatos.MostrarDatosVIP(jTable1, "SELECT * FROM clientes WHERE tipo_cliente = 'VIP'");
+        MostrarDatos.MostrarDatosAsesor(jTable1, "SELECT cedula, nombre, asesor FROM clientes WHERE tipo_cliente = 'VIP'");
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        MostrarDatos.MostrarDatosFProductos(jTable1, "SELECT cedula, nombre, producto_frecuente FROM clientes WHERE tipo_cliente = 'VIP'");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        MostrarDatos.MostrarDatosFDescuento(jTable1, "SELECT cedula, nombre, descuento FROM clientes WHERE tipo_cliente = 'VIP'");
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        MostrarDatos.MostrarDatosCredito(jTable1, "SELECT cedula, nombre, cantidad_credito FROM clientes WHERE tipo_cliente = 'VIP'");
+    }//GEN-LAST:event_jButton4ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

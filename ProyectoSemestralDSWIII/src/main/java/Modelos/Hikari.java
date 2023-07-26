@@ -6,8 +6,11 @@ package Modelos;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.Properties;
 
 /**
  *
@@ -18,9 +21,16 @@ public class Hikari {
     private static final HikariDataSource dataS;
 
     static {
-        configuracion.setJdbcUrl("jdbc:mariadb://localhost:3307/gestion_clientes");
-        configuracion.setUsername("estudiante");
-        configuracion.setPassword("jorjorxdlol12");
+        Properties properties = new Properties();
+        try (FileInputStream fileInputStream = new FileInputStream("C:/Users/josue/Desktop/ProyectoFinalDSWIII-main (1)/ProyectoFinalDSWIII-main/database.properties")) {
+            properties.load(fileInputStream);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        configuracion.setJdbcUrl(properties.getProperty("db.url"));
+        configuracion.setUsername(properties.getProperty("db.username"));
+        configuracion.setPassword(properties.getProperty("db.password"));
         configuracion.addDataSourceProperty("cachePrepStms", true);
         configuracion.addDataSourceProperty("prepStmsCacheSize", 250);
         configuracion.addDataSourceProperty("prepStmsCacheSqlLimit", 2048);

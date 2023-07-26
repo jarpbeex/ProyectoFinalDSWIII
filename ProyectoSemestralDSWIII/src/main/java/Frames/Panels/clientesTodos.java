@@ -4,7 +4,7 @@
  */
 package Frames.Panels;
 
-import Modelos.ControlDatos;
+import Modelos.MostrarDatos;
 
 /**
  *
@@ -80,7 +80,7 @@ public class clientesTodos extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ControlDatos.MostrarDatos(tablaClientesTodos, "SELECT * FROM clientes");
+        MostrarDatos.MostrarDatos(tablaClientesTodos, "SELECT cedula, nombre, fecha_nacimiento, genero, correo, telefono, provincia, ciudad, corregimiento, tipo_cliente  FROM clientes");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

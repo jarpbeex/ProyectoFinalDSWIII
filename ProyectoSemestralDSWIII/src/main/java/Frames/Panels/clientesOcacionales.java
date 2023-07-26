@@ -4,7 +4,7 @@
  */
 package Frames.Panels;
 
-import Modelos.ControlDatos;
+import Modelos.MostrarDatos;
 
 /**
  *
@@ -80,7 +80,7 @@ public class clientesOcacionales extends javax.swing.JPanel {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        ControlDatos.MostrarDatos(tablaClientesOcacionales, "SELECT * FROM clientes WHERE tipo_cliente = 'Ocacional'");
+        MostrarDatos.MostrarDatos(tablaClientesOcacionales, "SELECT * FROM clientes WHERE tipo_cliente = 'Ocacional'");
     }//GEN-LAST:event_jButton1ActionPerformed
 
 

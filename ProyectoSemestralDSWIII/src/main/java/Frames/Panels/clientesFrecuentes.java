@@ -4,12 +4,9 @@
  */
 package Frames.Panels;
 
-import Entidades.Cliente;
-import Entidades.Producto;
-import Modelos.ControlDatos;
-import java.util.ArrayList;
-import java.util.List;
-import javax.swing.table.DefaultTableModel;
+import Modelos.MostrarDatos;
+
+
 
 /**
  *
@@ -22,15 +19,6 @@ public class clientesFrecuentes extends javax.swing.JPanel {
      */
     public clientesFrecuentes() {
         initComponents();
-    }
-    
-    private List<Producto> obtenerProductosFrecuentes(){
-    List<Producto> productosFrecuentes = new ArrayList<>();
-
-    productosFrecuentes.add(new Producto("Mogu Mogu", "1234567890", 2.50, 1.25));
-    productosFrecuentes.add(new Producto("Lasagna", "0987654321", 7.00, 5.00));
-
-    return productosFrecuentes;
     }
     
     /**
@@ -110,29 +98,15 @@ public class clientesFrecuentes extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        List<Producto> productosFrecuentes = obtenerProductosFrecuentes();
-        
-        for (Producto producto : productosFrecuentes){
-            Object[] rowData = {producto.getNombre(), producto.getCodigoBarras(), producto.getPrecioEstándar(), producto.getPrecioDescuento()};
-            model.addRow(rowData);
-        }
+        MostrarDatos.MostrarDatosFProductos(jTable1, "SELECT cedula, nombre, producto_frecuente FROM clientes WHERE tipo_cliente = 'Frecuente'");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        List<Cliente> clientesConDescuento = obtenerClientesConDescuento();
-        for (Cliente cliente : clientesConDescuento) {
-           Object[] rowData = {cliente.getNombre(), cliente.getDescuento()};
-            model.addRow(rowData);
-        }
+        MostrarDatos.MostrarDatosFDescuento(jTable1, "SELECT cedula, nombre, descuento FROM clientes WHERE tipo_cliente = 'Frecuente'");
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        ControlDatos.MostrarDatos(jTable1, "SELECT * FROM clientes WHERE tipo_cliente = 'Frecuente'");
+        MostrarDatos.MostrarDatos(jTable1, "SELECT cedula, nombre, fecha_nacimiento, genero, correo, telefono, provincia, ciudad, corregimiento, tipo_cliente, numero_membresia, cantidad_promedio FROM clientes WHERE tipo_cliente = 'Frecuente'");
     }//GEN-LAST:event_jButton3ActionPerformed
 
 
