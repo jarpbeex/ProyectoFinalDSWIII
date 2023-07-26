@@ -5,8 +5,8 @@
 package Entidades;
 
 public class Cliente {
-    private String cedula;
     private String nombre;
+    private String cedula;
     private String fecha_nacimiento;
     private String genero;
     private String correo;
@@ -15,8 +15,9 @@ public class Cliente {
     private String ciudad;
     private String corregimiento;
     private String tipo_cliente;
+    private String estado;
     
-    public Cliente(String cedula, String nombre, String fecha_nacimiento, String genero, String correo, String telefono, String provincia, String ciudad, String corregimiento, String tipo_cliente) {
+    public Cliente(String nombre, String cedula) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.fecha_nacimiento = fecha_nacimiento;
@@ -27,6 +28,7 @@ public class Cliente {
         this.ciudad = ciudad;
         this.corregimiento = corregimiento;
         this.tipo_cliente = tipo_cliente;
+        this.estado = estado;
     }
     
     public Cliente() {
@@ -40,6 +42,7 @@ public class Cliente {
         ciudad = "";
         corregimiento = "";
         tipo_cliente = "";
+        estado = "";
     }
     
     public String getCedula() {
@@ -121,12 +124,15 @@ public class Cliente {
     public void setTipo_cliente(String tipo_cliente) {
         this.tipo_cliente = tipo_cliente;
     }
-
-    /**
-     *
-     * @return
-     */
     
+    public String getEstado() {
+        return estado;
+    }
+    
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
     public double getDescuento() {
         if ("VIP".equals(tipo_cliente)){
             return 0.2; //Descuento del 20%
@@ -135,5 +141,18 @@ public class Cliente {
         } else {
             return 0.0; //Sin descuento
         }
-    }    
+    }
+    
+    private double montoTotalGastado;
+
+    public void setEstado(){
+        if (montoTotalGastado >= 1000){
+            estado = "VIP"; // Si ha gastado más de $1000, se clasifica como cliente VIP
+    } else if (montoTotalGastado >= 500) {
+        estado = "Frecuente"; // Si ha gastado entre $500 y $999, se clasifica como cliente Frecuente
+    } else {
+        estado = "Ocasional"; // Si ha gastado menos de $500, se clasifica como cliente Ocasional
+    }
+        }
 }
+
