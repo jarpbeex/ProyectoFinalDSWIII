@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Entidades;
+
 public class Cliente {
     private String cedula;
     private String nombre;
@@ -28,7 +29,7 @@ public class Cliente {
         this.tipo_cliente = tipo_cliente;
     }
     
-    public Cliente(){
+    public Cliente() {
         cedula = "";
         nombre = "";
         fecha_nacimiento = "";
@@ -120,5 +121,19 @@ public class Cliente {
     public void setTipo_cliente(String tipo_cliente) {
         this.tipo_cliente = tipo_cliente;
     }
+
+    /**
+     *
+     * @return
+     */
     
+    public double getDescuento() {
+        if ("VIP".equals(tipo_cliente)){
+            return 0.2; //Descuento del 20%
+        } else if ("Frecuente".equals(tipo_cliente)){
+            return 0.1; //Descuento del 10%
+        } else {
+            return 0.0; //Sin descuento
+        }
+    }    
 }
