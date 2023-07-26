@@ -5,7 +5,7 @@
 package Frames;
 
 import Entidades.Cliente;
-import Frames.Panels.clienteActualizar;
+import Frames.Panels.clientesActualizar;
 import Frames.Panels.clienteEliminar;
 import Frames.Panels.productosExistentes;
 import Frames.Panels.clientesFrecuentes;
@@ -14,7 +14,8 @@ import Frames.Panels.clientesVIP;
 import Frames.Panels.clientesOcacionales;
 import Frames.Panels.clientesTodos;
 import Frames.Panels.comprasRealizadas;
-import Frames.Panels.panelBusqueda;
+import Frames.Panels.clientesBusqueda;
+import Frames.Panels.comprasDeClientes;
 import Modelos.CrearDatos;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -63,6 +64,10 @@ public class FramePrincipal extends javax.swing.JFrame {
         tabCompras = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        botonIngresarCliente1 = new javax.swing.JButton();
+        botonActualizar1 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        botonComprasCliente = new javax.swing.JButton();
         contenidoCompras = new javax.swing.JPanel();
         tabProductos = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
@@ -108,17 +113,17 @@ public class FramePrincipal extends javax.swing.JFrame {
         tabInicio.setLayout(tabInicioLayout);
         tabInicioLayout.setHorizontalGroup(
             tabInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tabInicioLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabInicioLayout.createSequentialGroup()
+                .addContainerGap(228, Short.MAX_VALUE)
                 .addComponent(jLabel4)
-                .addContainerGap(422, Short.MAX_VALUE))
+                .addGap(224, 224, 224))
         );
         tabInicioLayout.setVerticalGroup(
             tabInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabInicioLayout.createSequentialGroup()
-                .addGap(105, 105, 105)
+                .addGap(205, 205, 205)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(358, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
 
         Pestanas.addTab("INICIO", tabInicio);
@@ -187,25 +192,17 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(botonIngresarCliente)
-                .addGap(43, 43, 43))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(botonClientesOcacionales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonClientesTodos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonClientesFrecuentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonClientesVIP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(botonBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(botonActualizar)
-                            .addComponent(jButton2))))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(botonActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonClientesOcacionales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonClientesTodos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonClientesFrecuentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonClientesVIP, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonBusqueda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonIngresarCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -213,21 +210,21 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addComponent(botonClientesTodos)
-                .addGap(24, 24, 24)
-                .addComponent(botonClientesOcacionales)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botonClientesFrecuentes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botonClientesVIP)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonBusqueda)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(35, 35, 35)
                 .addComponent(botonIngresarCliente)
-                .addGap(18, 18, 18)
-                .addComponent(jButton2)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonActualizar)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton2)
+                .addGap(165, 165, 165)
+                .addComponent(botonClientesOcacionales)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonClientesFrecuentes)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonClientesVIP)
+                .addContainerGap(133, Short.MAX_VALUE))
         );
 
         contenidoClientes.setBackground(new java.awt.Color(204, 255, 204));
@@ -241,14 +238,14 @@ public class FramePrincipal extends javax.swing.JFrame {
         contenidoClientesLayout.setHorizontalGroup(
             contenidoClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenidoClientesLayout.createSequentialGroup()
-                .addGap(211, 211, 211)
+                .addGap(237, 237, 237)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(280, Short.MAX_VALUE))
+                .addContainerGap(254, Short.MAX_VALUE))
         );
         contenidoClientesLayout.setVerticalGroup(
             contenidoClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenidoClientesLayout.createSequentialGroup()
-                .addGap(204, 204, 204)
+                .addGap(198, 198, 198)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -274,10 +271,38 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(204, 255, 255));
 
-        jButton1.setText("Compras realizadas");
+        jButton1.setText("Todas las compras realizadas");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
+            }
+        });
+
+        botonIngresarCliente1.setText("Ingresar");
+        botonIngresarCliente1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonIngresarCliente1ActionPerformed(evt);
+            }
+        });
+
+        botonActualizar1.setText("Actualizar");
+        botonActualizar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonActualizar1ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Eliminar");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        botonComprasCliente.setText("Compras por clientes");
+        botonComprasCliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonComprasClienteActionPerformed(evt);
             }
         });
 
@@ -287,7 +312,12 @@ public class FramePrincipal extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(35, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonIngresarCliente1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonActualizar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(botonComprasCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(33, 33, 33))
         );
         jPanel3Layout.setVerticalGroup(
@@ -295,6 +325,14 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(117, 117, 117)
                 .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonComprasCliente)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonIngresarCliente1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(botonActualizar1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton3)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -304,7 +342,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         contenidoCompras.setLayout(contenidoComprasLayout);
         contenidoComprasLayout.setHorizontalGroup(
             contenidoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 903, Short.MAX_VALUE)
+            .addGap(0, 854, Short.MAX_VALUE)
         );
         contenidoComprasLayout.setVerticalGroup(
             contenidoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,16 +382,16 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
+                .addGap(22, 22, 22)
                 .addComponent(botonProductosExistente)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(90, 90, 90)
+                .addGap(89, 89, 89)
                 .addComponent(botonProductosExistente)
-                .addContainerGap(491, Short.MAX_VALUE))
+                .addContainerGap(492, Short.MAX_VALUE))
         );
 
         contenidoProductos.setBackground(new java.awt.Color(204, 255, 204));
@@ -362,7 +400,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         contenidoProductos.setLayout(contenidoProductosLayout);
         contenidoProductosLayout.setHorizontalGroup(
             contenidoProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 837, Short.MAX_VALUE)
+            .addGap(0, 912, Short.MAX_VALUE)
         );
         contenidoProductosLayout.setVerticalGroup(
             contenidoProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -467,7 +505,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private void botonBusquedaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBusquedaActionPerformed
         // TODO add your handling code here:
-        panelBusqueda pb = new panelBusqueda();
+        clientesBusqueda pb = new clientesBusqueda();
         mostrarPanel(pb, contenidoClientes);
     }//GEN-LAST:event_botonBusquedaActionPerformed
 
@@ -482,9 +520,26 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
-        clienteActualizar ca = new clienteActualizar();
+        clientesActualizar ca = new clientesActualizar();
         mostrarPanel(ca, contenidoClientes);
     }//GEN-LAST:event_botonActualizarActionPerformed
+
+    private void botonIngresarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarCliente1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonIngresarCliente1ActionPerformed
+
+    private void botonActualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_botonActualizar1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void botonComprasClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonComprasClienteActionPerformed
+        comprasDeClientes cc = new comprasDeClientes();
+        mostrarPanel(cc, contenidoCompras);
+    }//GEN-LAST:event_botonComprasClienteActionPerformed
     
     private void mostrarPanel (JPanel p, JPanel contenidoP) {
         p.setSize(762, 385);
@@ -536,18 +591,22 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel PanelPrincipal;
     private javax.swing.JTabbedPane Pestanas;
     private javax.swing.JButton botonActualizar;
+    private javax.swing.JButton botonActualizar1;
     private javax.swing.JButton botonBusqueda;
     private javax.swing.JButton botonClientesFrecuentes;
     private javax.swing.JButton botonClientesOcacionales;
     private javax.swing.JButton botonClientesTodos;
     private javax.swing.JButton botonClientesVIP;
+    private javax.swing.JButton botonComprasCliente;
     private javax.swing.JButton botonIngresarCliente;
+    private javax.swing.JButton botonIngresarCliente1;
     private javax.swing.JButton botonProductosExistente;
     private javax.swing.JPanel contenidoClientes;
     private javax.swing.JPanel contenidoCompras;
     private javax.swing.JPanel contenidoProductos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

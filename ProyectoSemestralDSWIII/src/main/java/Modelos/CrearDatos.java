@@ -5,6 +5,7 @@
 package Modelos;
 
 import Entidades.Cliente;
+import Entidades.Compra;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,7 +20,7 @@ import javax.swing.table.DefaultTableModel;
  * @author josue
  */
 public class CrearDatos {
-    public Boolean crear(Cliente cliente){
+    public Boolean crearCliente(Cliente cliente){
 
         try(Connection conexion = Hikari.getConnection();
                 PreparedStatement statement = conexion.prepareStatement("INSERT INTO CLIENTES(nombre, cedula,fecha_nacimiento, genero, correo, telefono, provincia, ciudad, corregimiento, tipo_cliente)"
@@ -43,7 +44,28 @@ public class CrearDatos {
         }catch(Error ex){
             return false;
         }
+    }
+    
+    public Boolean crearCompras(Compra compra){
 
+        try(Connection conexion = Hikari.getConnection();
+                PreparedStatement statement = conexion.prepareStatement
+            ("INSERT INTO compras (codigo_compra, cedula, cantidad_productos, costo_total, itbms_cobrado)"
+                        + "VALUES(?, ?, ?, ?, ?)");){
+                statement.setString(1, compra.getCodigoCompra());
+                statement.setString(2, compra.getCedula());
+                statement.setInt(3, compra.getProductosComprados());
+                statement.setDouble(4, compra.getCostoTotal());
+                statement.setDouble(5, compra.getItbmsCobrado());
+                int fila=statement.executeUpdate();
+                System.out.println("La fila insertada fue la fila "+fila);
+                 return true;
+        }catch (SQLException ex) {
+            Logger.getLogger(CrearDatos.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
+        }catch(Error ex){
+            return false;
+        }
     }
     
     public static void modificar(JTable campoT, String nombre, String fecha_nacimiento, String genero,

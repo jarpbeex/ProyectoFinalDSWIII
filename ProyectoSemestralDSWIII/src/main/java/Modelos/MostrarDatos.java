@@ -224,6 +224,30 @@ public class MostrarDatos {
         }
     }
     
+    public static void MostrarComprasPromedio (JTable campoT, String cedula) {
+        String consulta = "SELECT nombre, AVG(costo_total) AS Promedio FROM compras JOIN clientes ON compras.cedula = clientes.cedula WHERE clientes.cedula = ?";
+        try (Connection conexion = Hikari.getConnection();
+                PreparedStatement statement = conexion.prepareStatement(consulta);) {
+            statement.setString(1, cedula);
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("Nombre");
+            model.addColumn("Promedio de todas las compras");
+            campoT.setModel(model);
+
+            String [] datos = new String[2];
+            ResultSet rs = statement.executeQuery();
+            while(rs.next()){
+                datos[0] = rs.getString(1);
+                datos[1] = rs.getString(2);
+                model.addRow(datos);
+            }
+            
+        }catch (SQLException ex){
+            Logger.getLogger(MostrarDatos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
+    
     public static void MostrarDatosProductos (JTable campoT, String consulta) {
         try (Connection conexion = Hikari.getConnection();
                 PreparedStatement statement = conexion.prepareStatement(consulta);) {

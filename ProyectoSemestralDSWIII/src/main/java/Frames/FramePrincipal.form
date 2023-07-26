@@ -149,19 +149,19 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace pref="228" max="32767" attributes="0"/>
                           <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="422" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="224" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
                           <Component id="jLabel4" min="-2" pref="141" max="-2" attributes="0"/>
-                          <EmptySpace pref="358" max="32767" attributes="0"/>
+                          <EmptySpace pref="258" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -219,30 +219,17 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="botonIngresarCliente" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="botonClientesOcacionales" max="32767" attributes="0"/>
-                                          <Component id="botonClientesTodos" max="32767" attributes="0"/>
-                                          <Component id="botonClientesFrecuentes" max="32767" attributes="0"/>
-                                          <Component id="botonClientesVIP" alignment="1" max="32767" attributes="0"/>
-                                          <Component id="botonBusqueda" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="botonActualizar" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="botonActualizar" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="botonClientesOcacionales" max="32767" attributes="0"/>
+                                  <Component id="botonClientesTodos" max="32767" attributes="0"/>
+                                  <Component id="botonClientesFrecuentes" max="32767" attributes="0"/>
+                                  <Component id="botonClientesVIP" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="botonBusqueda" max="32767" attributes="0"/>
+                                  <Component id="botonIngresarCliente" alignment="0" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace pref="31" max="32767" attributes="0"/>
                           </Group>
@@ -253,21 +240,21 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                               <Component id="botonClientesTodos" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="botonClientesOcacionales" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="botonClientesFrecuentes" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="botonClientesVIP" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="botonBusqueda" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Component id="botonIngresarCliente" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                               <Component id="botonActualizar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="249" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="165" max="-2" attributes="0"/>
+                              <Component id="botonClientesOcacionales" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botonClientesFrecuentes" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botonClientesVIP" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="133" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -353,16 +340,16 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="237" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" pref="411" max="-2" attributes="0"/>
-                              <EmptySpace pref="280" max="32767" attributes="0"/>
+                              <EmptySpace pref="254" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="204" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="198" max="-2" attributes="0"/>
                               <Component id="jLabel3" min="-2" pref="80" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
@@ -426,7 +413,13 @@
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="35" max="32767" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jButton1" max="32767" attributes="0"/>
+                                  <Component id="botonIngresarCliente1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="botonActualizar1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jButton3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="botonComprasCliente" max="32767" attributes="0"/>
+                              </Group>
                               <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -436,6 +429,14 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                               <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botonComprasCliente" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botonIngresarCliente1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="botonActualizar1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -444,10 +445,42 @@
                   <SubComponents>
                     <Component class="javax.swing.JButton" name="jButton1">
                       <Properties>
-                        <Property name="text" type="java.lang.String" value="Compras realizadas"/>
+                        <Property name="text" type="java.lang.String" value="Todas las compras realizadas"/>
                       </Properties>
                       <Events>
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="botonIngresarCliente1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Ingresar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonIngresarCliente1ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="botonActualizar1">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Actualizar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonActualizar1ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="jButton3">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Eliminar"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+                      </Events>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="botonComprasCliente">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="Compras por clientes"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botonComprasClienteActionPerformed"/>
                       </Events>
                     </Component>
                   </SubComponents>
@@ -462,7 +495,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="903" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="854" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
@@ -517,18 +550,18 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Component id="botonProductosExistente" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="71" max="32767" attributes="0"/>
+                              <EmptySpace pref="30" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
                               <Component id="botonProductosExistente" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="491" max="32767" attributes="0"/>
+                              <EmptySpace pref="492" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -554,7 +587,7 @@
                   <Layout>
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <EmptySpace min="0" pref="837" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="912" max="32767" attributes="0"/>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">

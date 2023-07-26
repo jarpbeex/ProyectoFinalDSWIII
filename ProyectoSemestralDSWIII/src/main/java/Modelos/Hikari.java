@@ -22,7 +22,7 @@ public class Hikari {
 
     static {
         Properties properties = new Properties();
-        try (FileInputStream fileInputStream = new FileInputStream("C:/Users/josue/Desktop/ProyectoFinalDSWIII-main (1)/ProyectoFinalDSWIII-main/database.properties")) {
+        try (FileInputStream fileInputStream = new FileInputStream("C:/Users/josue/Desktop/ProyectoFinalDSWIII-Trabajar/ProyectoFinalDSWIII-main/database.properties")) {
             properties.load(fileInputStream);
         } catch (IOException e) {
             e.printStackTrace();

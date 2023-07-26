@@ -239,7 +239,7 @@ public class clientesIngresar extends javax.swing.JPanel {
         cliente.setCorregimiento(corregimientoCampo.getText());
         cliente.setTipo_cliente(estadoCampo.getSelectedItem().toString());
         
-        mJdbc.crear(cliente);
+        mJdbc.crearCliente(cliente);
         
     }//GEN-LAST:event_guardarButtonActionPerformed
 
