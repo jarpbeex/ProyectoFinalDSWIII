@@ -95,6 +95,27 @@ public class CrearDatos {
         }catch(Error ex){}
     }
     
+    public static void modificarCompras(JTable campoT, String codigo_compra, String cedula, int cantidad,
+            double total, double itbms){
+        
+        try(Connection conn=Hikari.getConnection();
+            PreparedStatement statement=conn.prepareStatement("UPDATE compras SET "
+                    + "cedula = ?, cantidad_productos = ?, costo_total = ?, itbms_cobrado = ? WHERE codigo_compra = ?");){
+            
+            statement.setString(5, codigo_compra);
+            statement.setString(1, cedula);
+            statement.setInt(2, cantidad);
+            statement.setDouble(3, total);
+            statement.setDouble(4, itbms);
+            
+            
+            int filaAct = statement.executeUpdate();
+            System.out.println("La fila insertada fue la fila "+filaAct);
+        }catch (SQLException ex) {
+            Logger.getLogger(CrearDatos.class.getName()).log(Level.SEVERE, null, ex);
+        }catch(Error ex){}
+    }
+    
     public static void buscarParaModificar(JTable campoT, String cedula){
         
         try(Connection conn=Hikari.getConnection();
@@ -135,12 +156,53 @@ public class CrearDatos {
         }catch(Error ex){}
     }
     
-    public static void eliminar(String cliente){
+    public static void buscarParaModificarCompras(JTable campoT, String cedula){
         
         try(Connection conn=Hikari.getConnection();
-            PreparedStatement statement=conn.prepareStatement("DELETE FROM clientes WHERE cedula = ?");){
-            
+            PreparedStatement statement=conn.prepareStatement("SELECT * FROM compras WHERE cedula = ?");){
+
+            statement.setString(1, cedula);
+
+            DefaultTableModel model = new DefaultTableModel();
+            model.addColumn("Numero de compra");
+            model.addColumn("Cedula");
+            model.addColumn("Cantidad de productos");
+            model.addColumn("Costo total");
+            model.addColumn("ITBMS Cobrado");
+            campoT.setModel(model);
+
+        String [] datos = new String[10];
+        ResultSet rs = statement.executeQuery();
+        while(rs.next()){
+            datos[0] = rs.getString(1);
+            datos[1] = rs.getString(2);
+            datos[2] = rs.getString(3);
+            datos[3] = rs.getString(4);
+            datos[4] = rs.getString(5);
+            model.addRow(datos);
+        }
+        }catch (SQLException ex) {
+            Logger.getLogger(CrearDatos.class.getName()).log(Level.SEVERE, null, ex);
+        }catch(Error ex){}
+    }
+    
+    
+    public static void eliminar(String cliente){
+        try(Connection conn=Hikari.getConnection();
+            PreparedStatement statement=conn.prepareStatement("DELETE FROM compras WHERE cedula = ?");){
             statement.setString(1, cliente);
+            int fila=statement.executeUpdate();
+        }catch (SQLException ex) {
+            Logger.getLogger(CrearDatos.class.getName()).log(Level.SEVERE, null, ex);
+        }catch(Error ex){}   
+    }
+    
+    public static void eliminarCompras(String compra){
+        
+        try(Connection conn=Hikari.getConnection();
+            PreparedStatement statement=conn.prepareStatement("DELETE FROM compras WHERE codigo_compra = ?");){
+            
+            statement.setString(1, compra);
             
             int fila=statement.executeUpdate();
             System.out.println("La fila insertada fue la fila "+fila);
@@ -148,9 +210,8 @@ public class CrearDatos {
             Logger.getLogger(CrearDatos.class.getName()).log(Level.SEVERE, null, ex);
         }catch(Error ex){
       }
-            
-            
     }
+    
     
     public static void buscarXCedula(String cedula, JTable campoT){
               Cliente clientes=new Cliente();

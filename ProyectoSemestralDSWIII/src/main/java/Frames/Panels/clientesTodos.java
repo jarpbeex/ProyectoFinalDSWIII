@@ -32,8 +32,10 @@ public class clientesTodos extends javax.swing.JPanel {
         tablaClientesTodos = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 204));
         setPreferredSize(new java.awt.Dimension(525, 410));
 
+        tablaClientesTodos.setBackground(new java.awt.Color(153, 153, 153));
         tablaClientesTodos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -60,10 +62,10 @@ public class clientesTodos extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
+                .addComponent(jScrollPane1)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(219, 219, 219)
+                .addGap(228, 228, 228)
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -72,9 +74,9 @@ public class clientesTodos extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 261, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(32, 32, 32)
                 .addComponent(jButton1)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(88, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

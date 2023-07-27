@@ -32,6 +32,9 @@ public class comprasRealizadas extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 204));
+
+        jTable1.setBackground(new java.awt.Color(153, 153, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

@@ -13,6 +13,13 @@ public class Producto {
     private int codigoBarras;
     private double precioEstandar;
     private double precioDescuento;
+
+    public Producto(String nombre, int codigoBarras, double precioEstandar, double precioDescuento) {
+        this.nombre = nombre;
+        this.codigoBarras = codigoBarras;
+        this.precioEstandar = precioEstandar;
+        this.precioDescuento = precioDescuento;
+    }
     
     private String getNombre(){
         return nombre;

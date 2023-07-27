@@ -32,8 +32,10 @@ public class clientesOcacionales extends javax.swing.JPanel {
         tablaClientesOcacionales = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 204));
         setPreferredSize(new java.awt.Dimension(525, 419));
 
+        tablaClientesOcacionales.setBackground(new java.awt.Color(153, 153, 153));
         tablaClientesOcacionales.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -74,7 +76,7 @@ public class clientesOcacionales extends javax.swing.JPanel {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton1)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

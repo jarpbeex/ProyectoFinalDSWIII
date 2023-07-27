@@ -15,7 +15,10 @@ import Frames.Panels.clientesOcacionales;
 import Frames.Panels.clientesTodos;
 import Frames.Panels.comprasRealizadas;
 import Frames.Panels.clientesBusqueda;
+import Frames.Panels.comprasActualizar;
 import Frames.Panels.comprasDeClientes;
+import Frames.Panels.comprasEliminar;
+import Frames.Panels.comprasIngresar;
 import Modelos.CrearDatos;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -57,7 +60,6 @@ public class FramePrincipal extends javax.swing.JFrame {
         botonClientesVIP = new javax.swing.JButton();
         botonBusqueda = new javax.swing.JButton();
         botonIngresarCliente = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         botonActualizar = new javax.swing.JButton();
         contenidoClientes = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
@@ -69,10 +71,12 @@ public class FramePrincipal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         botonComprasCliente = new javax.swing.JButton();
         contenidoCompras = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
         tabProductos = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         botonProductosExistente = new javax.swing.JButton();
         contenidoProductos = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jMenu1.setText("jMenu1");
@@ -94,7 +98,6 @@ public class FramePrincipal extends javax.swing.JFrame {
         setBackground(new java.awt.Color(51, 204, 255));
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setLocation(new java.awt.Point(0, 0));
-        setPreferredSize(new java.awt.Dimension(1200, 650));
         setResizable(false);
         setSize(new java.awt.Dimension(400, 300));
 
@@ -106,6 +109,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         Pestanas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         Pestanas.setFont(new java.awt.Font("Cambria", 0, 12)); // NOI18N
 
+        tabInicio.setBackground(new java.awt.Color(204, 204, 204));
+
         jLabel4.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
         jLabel4.setText("BIENVENIDO ADMINISTRADOR");
 
@@ -113,24 +118,24 @@ public class FramePrincipal extends javax.swing.JFrame {
         tabInicio.setLayout(tabInicioLayout);
         tabInicioLayout.setHorizontalGroup(
             tabInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tabInicioLayout.createSequentialGroup()
-                .addContainerGap(228, Short.MAX_VALUE)
+            .addGroup(tabInicioLayout.createSequentialGroup()
+                .addGap(204, 204, 204)
                 .addComponent(jLabel4)
-                .addGap(224, 224, 224))
+                .addContainerGap(268, Short.MAX_VALUE))
         );
         tabInicioLayout.setVerticalGroup(
             tabInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tabInicioLayout.createSequentialGroup()
-                .addGap(205, 205, 205)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(258, Short.MAX_VALUE))
+                .addContainerGap(428, Short.MAX_VALUE))
         );
 
         Pestanas.addTab("INICIO", tabInicio);
 
         tabClientes.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         botonClientesTodos.setText("Todos los clientes");
         botonClientesTodos.addActionListener(new java.awt.event.ActionListener() {
@@ -174,13 +179,6 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setText("Eliminar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
         botonActualizar.setText("Actualizar");
         botonActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,7 +194,6 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addGap(31, 31, 31)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(botonActualizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonClientesOcacionales, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonClientesTodos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonClientesFrecuentes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -212,40 +209,38 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addComponent(botonClientesTodos)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonBusqueda)
-                .addGap(35, 35, 35)
+                .addGap(26, 26, 26)
                 .addComponent(botonIngresarCliente)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(botonActualizar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addGap(165, 165, 165)
+                .addGap(32, 32, 32)
                 .addComponent(botonClientesOcacionales)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botonClientesFrecuentes)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botonClientesVIP)
-                .addContainerGap(133, Short.MAX_VALUE))
+                .addContainerGap(292, Short.MAX_VALUE))
         );
 
-        contenidoClientes.setBackground(new java.awt.Color(204, 255, 204));
+        contenidoClientes.setBackground(new java.awt.Color(204, 204, 204));
         contenidoClientes.setPreferredSize(new java.awt.Dimension(525, 404));
 
         jLabel3.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
-        jLabel3.setText("Bienvenido clientes");
+        jLabel3.setText("Administración de Clientes");
 
         javax.swing.GroupLayout contenidoClientesLayout = new javax.swing.GroupLayout(contenidoClientes);
         contenidoClientes.setLayout(contenidoClientesLayout);
         contenidoClientesLayout.setHorizontalGroup(
             contenidoClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(contenidoClientesLayout.createSequentialGroup()
-                .addGap(237, 237, 237)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(254, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoClientesLayout.createSequentialGroup()
+                .addContainerGap(206, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(138, 138, 138))
         );
         contenidoClientesLayout.setVerticalGroup(
             contenidoClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(contenidoClientesLayout.createSequentialGroup()
-                .addGap(198, 198, 198)
+                .addGap(211, 211, 211)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -257,7 +252,7 @@ public class FramePrincipal extends javax.swing.JFrame {
             .addGroup(tabClientesLayout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(contenidoClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE))
+                .addComponent(contenidoClientes, javax.swing.GroupLayout.DEFAULT_SIZE, 922, Short.MAX_VALUE))
         );
         tabClientesLayout.setVerticalGroup(
             tabClientesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,7 +264,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         tabCompras.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
         jButton1.setText("Todas las compras realizadas");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -310,15 +305,15 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(15, 15, 15)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonIngresarCliente1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(botonActualizar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(botonComprasCliente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(33, 33, 33))
+                    .addComponent(botonComprasCliente, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -336,17 +331,26 @@ public class FramePrincipal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        contenidoCompras.setBackground(new java.awt.Color(204, 255, 204));
+        contenidoCompras.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel5.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
+        jLabel5.setText("Administración de Compras");
 
         javax.swing.GroupLayout contenidoComprasLayout = new javax.swing.GroupLayout(contenidoCompras);
         contenidoCompras.setLayout(contenidoComprasLayout);
         contenidoComprasLayout.setHorizontalGroup(
             contenidoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 854, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, contenidoComprasLayout.createSequentialGroup()
+                .addContainerGap(179, Short.MAX_VALUE)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(158, 158, 158))
         );
         contenidoComprasLayout.setVerticalGroup(
             contenidoComprasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 604, Short.MAX_VALUE)
+            .addGroup(contenidoComprasLayout.createSequentialGroup()
+                .addGap(200, 200, 200)
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(324, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout tabComprasLayout = new javax.swing.GroupLayout(tabCompras);
@@ -368,7 +372,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         tabProductos.setBackground(new java.awt.Color(204, 204, 204));
 
-        jPanel4.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
 
         botonProductosExistente.setText("Productos existentes");
         botonProductosExistente.addActionListener(new java.awt.event.ActionListener() {
@@ -381,30 +385,39 @@ public class FramePrincipal extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(botonProductosExistente)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(25, 25, 25))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(89, 89, 89)
+                .addGap(90, 90, 90)
                 .addComponent(botonProductosExistente)
-                .addContainerGap(492, Short.MAX_VALUE))
+                .addContainerGap(491, Short.MAX_VALUE))
         );
 
-        contenidoProductos.setBackground(new java.awt.Color(204, 255, 204));
+        contenidoProductos.setBackground(new java.awt.Color(204, 204, 204));
+
+        jLabel6.setFont(new java.awt.Font("Cambria", 0, 48)); // NOI18N
+        jLabel6.setText("Administración de Productos");
 
         javax.swing.GroupLayout contenidoProductosLayout = new javax.swing.GroupLayout(contenidoProductos);
         contenidoProductos.setLayout(contenidoProductosLayout);
         contenidoProductosLayout.setHorizontalGroup(
             contenidoProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 912, Short.MAX_VALUE)
+            .addGroup(contenidoProductosLayout.createSequentialGroup()
+                .addGap(149, 149, 149)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 613, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(169, Short.MAX_VALUE))
         );
         contenidoProductosLayout.setVerticalGroup(
             contenidoProductosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(contenidoProductosLayout.createSequentialGroup()
+                .addGap(201, 201, 201)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout tabProductosLayout = new javax.swing.GroupLayout(tabProductos);
@@ -514,26 +527,24 @@ public class FramePrincipal extends javax.swing.JFrame {
         mostrarPanel(ci, contenidoClientes);
     }//GEN-LAST:event_botonIngresarClienteActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        clienteEliminar ce = new clienteEliminar();
-        mostrarPanel(ce, contenidoClientes);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
     private void botonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizarActionPerformed
         clientesActualizar ca = new clientesActualizar();
         mostrarPanel(ca, contenidoClientes);
     }//GEN-LAST:event_botonActualizarActionPerformed
 
     private void botonIngresarCliente1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonIngresarCliente1ActionPerformed
-        // TODO add your handling code here:
+        comprasIngresar ci = new comprasIngresar();
+        mostrarPanel(ci, contenidoCompras);
     }//GEN-LAST:event_botonIngresarCliente1ActionPerformed
 
     private void botonActualizar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonActualizar1ActionPerformed
-        // TODO add your handling code here:
+        comprasActualizar ca = new comprasActualizar();
+        mostrarPanel(ca, contenidoCompras);
     }//GEN-LAST:event_botonActualizar1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
+        comprasEliminar ce = new comprasEliminar();
+        mostrarPanel(ce, contenidoCompras);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void botonComprasClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonComprasClienteActionPerformed
@@ -605,12 +616,13 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel contenidoCompras;
     private javax.swing.JPanel contenidoProductos;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

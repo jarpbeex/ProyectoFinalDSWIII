@@ -47,12 +47,14 @@ public class FrameLogin extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
-        jPanel2.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel2.setBackground(new java.awt.Color(102, 102, 102));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("credenciales_usuario"));
 
+        jLabel1.setBackground(new java.awt.Color(0, 0, 0));
         jLabel1.setFont(new java.awt.Font("Cambria", 0, 36)); // NOI18N
         jLabel1.setText("Gestion de clientes");
 
+        jLabel3.setBackground(new java.awt.Color(255, 255, 51));
         jLabel3.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         jLabel3.setText("Contraseña:");
 
@@ -62,6 +64,7 @@ public class FrameLogin extends javax.swing.JFrame {
             }
         });
 
+        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
         jLabel2.setFont(new java.awt.Font("Cambria", 0, 18)); // NOI18N
         jLabel2.setText("Usuario: ");
 

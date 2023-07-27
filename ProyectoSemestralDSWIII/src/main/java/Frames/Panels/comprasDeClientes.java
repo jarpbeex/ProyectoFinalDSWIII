@@ -34,6 +34,9 @@ public class comprasDeClientes extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         botonBuscar = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 204));
+
+        jTable1.setBackground(new java.awt.Color(153, 153, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -74,12 +77,12 @@ public class comprasDeClientes extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40)
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addComponent(botonBuscar))
-                .addGap(0, 44, Short.MAX_VALUE))
+                .addGap(0, 23, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

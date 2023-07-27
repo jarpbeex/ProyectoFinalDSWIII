@@ -36,6 +36,8 @@ public class clientesFrecuentes extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jButton3 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 204));
+
         jButton1.setText("Productos frecuentes");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,6 +52,7 @@ public class clientesFrecuentes extends javax.swing.JPanel {
             }
         });
 
+        jTable1.setBackground(new java.awt.Color(153, 153, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

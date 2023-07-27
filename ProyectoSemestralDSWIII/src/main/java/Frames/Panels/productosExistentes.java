@@ -32,6 +32,9 @@ public class productosExistentes extends javax.swing.JPanel {
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(204, 204, 204));
+
+        jTable1.setBackground(new java.awt.Color(153, 153, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -66,9 +69,9 @@ public class productosExistentes extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(23, 23, 23)
                 .addComponent(jButton1)
-                .addGap(0, 36, Short.MAX_VALUE))
+                .addGap(0, 24, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

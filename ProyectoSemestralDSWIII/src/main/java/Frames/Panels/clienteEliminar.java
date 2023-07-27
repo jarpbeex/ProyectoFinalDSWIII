@@ -34,6 +34,7 @@ public class clienteEliminar extends javax.swing.JPanel {
         botonBuscarEliminar = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
+        jTable1.setBackground(new java.awt.Color(102, 102, 102));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -54,7 +55,7 @@ public class clienteEliminar extends javax.swing.JPanel {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 51, 51));
+        jButton2.setBackground(new java.awt.Color(255, 102, 102));
         jButton2.setText("Eliminar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,26 +67,26 @@ public class clienteEliminar extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
             .addGroup(layout.createSequentialGroup()
-                .addGap(68, 68, 68)
+                .addGap(131, 131, 131)
                 .addComponent(botonBuscarEliminar)
                 .addGap(18, 18, 18)
                 .addComponent(campoBuscarCedula, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(58, 58, 58)
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(botonBuscarEliminar)
                     .addComponent(campoBuscarCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -94,6 +95,7 @@ public class clienteEliminar extends javax.swing.JPanel {
     }//GEN-LAST:event_botonBuscarEliminarActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        CrearDatos.eliminarCompras(campoBuscarCedula.getText());
         CrearDatos.eliminar(campoBuscarCedula.getText());
         
     }//GEN-LAST:event_jButton2ActionPerformed
